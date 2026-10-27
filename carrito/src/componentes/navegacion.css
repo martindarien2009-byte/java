@@ -1,0 +1,11 @@
+.logoCarrito {
+  background: linear-gradient(0.25turn, aqua, white, aqua);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}

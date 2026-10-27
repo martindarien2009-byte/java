@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nombre": "rollo-de-papel-higienico",
+    "precio": 19.99,
+    "imagen": "/path/to/image1.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "olla-a-presion",
+    "precio": 79.99,
+    "imagen": "/path/to/image2.jpg"
+  }
+]
