@@ -1,5 +1,5 @@
 import "./navegacion.css";
-import logoCarrito from "./logocarrito.jsx";
+import LogoCarrito from "./logocarrito.jsx";
 export default function Navegacion() {
   return (
     <nav className="navegacion">
@@ -14,8 +14,7 @@ export default function Navegacion() {
           <a href="/contacto">Contacto</a>
         </li>
       </ul>
-      {/* carrito de compras */}
-      <logoCarrito cantidadproductos={0} />
+      <LogoCarrito cantidadproductos={0} />
     </nav>
   );
 }

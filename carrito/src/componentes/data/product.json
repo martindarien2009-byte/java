@@ -3,12 +3,48 @@
     "id": 1,
     "nombre": "rollo-de-papel-higienico",
     "precio": 19.99,
-    "imagen": "/path/to/image1.jpg"
+    "imagen": "/OIP.webp",
+    "descripcion": "Rollo de papel higiénico de alta calidad, suave y resistente.",
+    "stock": 50
   },
   {
     "id": 2,
     "nombre": "olla-a-presion",
     "precio": 79.99,
-    "imagen": "/path/to/image2.jpg"
+    "imagen": "/OIP (2).webp",
+    "descripcion": "Olla a presión de alta calidad, ideal para cocinar de manera eficiente.",
+    "stock": 30
+  },
+  {
+    "id": 3,
+    "nombre": "licuadora",
+    "precio": 49.99,
+    "imagen": "/descarga.webp",
+    "descripcion": "Licuadora de alta calidad, ideal para preparar batidos y licuados.",
+    "stock": 20
+  },
+  {
+    "id": 4,
+    "nombre": "plancha",
+    "precio": 29.99,
+    "imagen": "/descarga (1).webp",
+    "descripcion": "Plancha de alta calidad, ideal para planchar la ropa de manera eficiente.",
+    "stock": 25
+  },
+  {
+    "id": 5,
+    "nombre": "aspiradora",
+    "precio": 99.99,
+    "imagen": "/R.png",
+    "descripcion": "Aspiradora de alta calidad, ideal para limpiar el hogar de manera eficiente.",
+    "stock": 15
+  },
+  {
+    "id": 6,
+    "nombre": "cafetera",
+    "precio": 39.99,
+    "imagen": "/OIP (1).webp",
+    "descripcion": "Cafetera de alta calidad, ideal para preparar café de manera eficiente.",
+    "stock": 20
   }
 ]

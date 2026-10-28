@@ -1,11 +1,45 @@
-.logoCarrito {
-  background: linear-gradient(0.25turn, aqua, white, aqua);
+.navegacion {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
+  gap: 24px;
+  min-height: 76px;
+  padding: 12px clamp(20px, 6vw, 88px);
+  background: linear-gradient(105deg, #0f766e, #14b8a6 52%, #99f6e4);
+  box-shadow: 0 4px 16px rgb(15 23 42 / 14%);
+}
+
+.navegacion ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 4vw, 42px);
+  list-style: none;
+}
+
+.navegacion a {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 160ms ease;
+}
+
+.navegacion a:hover {
+  opacity: 0.78;
+}
+
+@media (max-width: 480px) {
+  .navegacion {
+    gap: 12px;
+    padding-inline: 16px;
+  }
+
+  .navegacion ul {
+    gap: 14px;
+  }
+
+  .navegacion a {
+    font-size: 0.9rem;
+  }
 }

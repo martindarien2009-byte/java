@@ -1,10 +1,17 @@
+.logoCarrito {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .carrito_logo {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  background-color: #f5f5f5;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: #fff;
   border-radius: 50%;
-  text-align: center;
-  line-height: 50px;
+  color: #0f766e;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgb(15 23 42 / 16%);
 }
