@@ -1,0 +1,74 @@
+.compras {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 64px);
+}
+
+.compras h1 {
+  margin-bottom: 20px;
+  color: #0f172a;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+
+.compras_lista {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+}
+
+.compras_producto {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.compras_producto img {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  background: #f8fafc;
+  object-fit: contain;
+}
+
+.compras_producto h2 {
+  margin-bottom: 6px;
+  color: #1e293b;
+  font-size: 1rem;
+}
+
+.compras_producto p {
+  color: #64748b;
+}
+
+.compras_producto strong,
+.compras_total {
+  color: #0f766e;
+  font-weight: 700;
+}
+
+.compras_total {
+  margin-top: 20px;
+  text-align: right;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 480px) {
+  .compras_producto {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .compras_producto img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .compras_producto strong {
+    grid-column: 2;
+  }
+}

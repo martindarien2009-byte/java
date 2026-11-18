@@ -1,21 +1,14 @@
 import "./listaproducto.css";
 import Producto from "../componentes/producto.jsx";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Filtro from "../componentes/filtro.jsx";
 
-const categorias = ["beuty", "fragances", "furniture", "groseries"];
-const ordenes = {
-  nombre: (a, b) => a.title.localeCompare(b.title),
-  precio: (a, b) => a.price - b.price,
-  stock: (a, b) => a.stock - b.stock,
-};
-
-export default function ListaProducto() {
+export default function ListaProducto({ onAgregarAlCarrito }) {
   const [productos, setProductos] = useState([]);
+  const [productosFiltrados, setProductosFiltrados] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [ordenarPor, setOrdenarPor] = useState("nombre");
-  const [filtroCategoria, setFiltroCategoria] = useState("");
+  const productosVisibles = productosFiltrados ?? productos;
 
   useEffect(() => {
     const controller = new AbortController();
@@ -51,29 +44,17 @@ export default function ListaProducto() {
     return () => controller.abort();
   }, []);
 
-  const productosVisibles = useMemo(() => {
-    const productosFiltrados = filtroCategoria
-      ? productos.filter((producto) => producto.category === filtroCategoria)
-      : productos;
-    const comparador = ordenes[ordenarPor];
-    return [...productosFiltrados].sort(comparador);
-  }, [productos, ordenarPor, filtroCategoria]);
-
   return (
     <div className="listaproducto">
       <Filtro
-        ordenarPor={ordenarPor}
-        setOrdenarPor={setOrdenarPor}
-        filtroCategoria={filtroCategoria}
-        setFiltroCategoria={setFiltroCategoria}
-        categorias={categorias}
-        ordenes={ordenes}
+        productos={productos}
+        setProductosFiltrados={setProductosFiltrados}
       />
       <div className="productos-grid">
         {loading && <p>Cargando productos...</p>}
         {error && <p>Error: {error.message}</p>}
         <header className="listaproducto_encabezado">
-          <h1>Nuestros productos</h1>
+          <h1 id="productos">Nuestros productos</h1>
           <p>Encuentra lo que necesitas para tu hogar.</p>
         </header>
         {!loading &&
@@ -82,12 +63,13 @@ export default function ListaProducto() {
             productosVisibles.map((producto) => (
               <Producto
                 key={producto.id}
+                producto={producto}
                 nombre={producto.title}
                 precio={producto.price}
                 imagen={producto.thumbnail}
                 descripcion={producto.description}
                 stock={producto.stock}
-                categoria={producto.category}
+                onAgregar={onAgregarAlCarrito}
               />
             ))
           ) : (

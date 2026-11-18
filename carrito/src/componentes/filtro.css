@@ -1,0 +1,40 @@
+.filtro {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.filtro-orden {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  align-items: end;
+  gap: 1rem;
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding: 20px clamp(24px, 5vw, 64px);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.filtro-orden label {
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.filtro-orden select,
+.filtro-orden input {
+  width: 100%;
+  min-height: 42px;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+  color: #172033;
+  font: inherit;
+}
+
+.filtro-orden select:focus,
+.filtro-orden input:focus {
+  border-color: #0f766e;
+  outline: 2px solid rgb(15 118 110 / 20%);
+  outline-offset: 1px;
+}

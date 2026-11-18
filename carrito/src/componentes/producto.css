@@ -82,6 +82,33 @@
   font-size: 0.875rem;
 }
 
+.producto_agregar {
+  min-height: 42px;
+  padding: 0.65rem 1rem;
+  border: 0;
+  border-radius: 10px;
+  background: #0f766e;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.producto_agregar:hover:not(:disabled) {
+  background: #115e59;
+}
+
+.producto_agregar:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.producto_mensaje {
+  min-height: 1.25em;
+  color: #0f766e;
+  font-size: 0.85rem;
+}
+
 .producto.sin-stock {
   opacity: 0.72;
 }

@@ -6,13 +6,25 @@ export default function Producto({
   imagen,
   descripcion,
   stock,
+  producto,
+  onAgregar,
 }) {
   const [cantidad, setCantidad] = useState(stock > 0 ? 1 : 0);
+  const [mensajeCarrito, setMensajeCarrito] = useState("");
 
   const handleIncrement = (newcantidad) => {
     if (newcantidad >= 0 && newcantidad <= stock) {
       setCantidad(newcantidad);
     }
+  };
+
+  const handleAgregarAlCarrito = () => {
+    const agregado = onAgregar(producto, cantidad);
+    setMensajeCarrito(
+      agregado
+        ? "Producto agregado al carrito."
+        : "No hay más stock disponible para este producto.",
+    );
   };
 
   return (
@@ -46,6 +58,17 @@ export default function Producto({
       </div>
       <p className="producto_stock">
         {stock > 0 ? `Stock disponible: ${stock}` : "Sin stock"}
+      </p>
+      <button
+        className="producto_agregar"
+        type="button"
+        disabled={cantidad <= 0 || stock <= 0}
+        onClick={handleAgregarAlCarrito}
+      >
+        Agregar al carrito
+      </button>
+      <p className="producto_mensaje" aria-live="polite">
+        {mensajeCarrito}
       </p>
     </div>
   );

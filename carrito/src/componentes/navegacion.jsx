@@ -1,20 +1,27 @@
 import "./navegacion.css";
-import LogoCarrito from "./logocarrito.jsx";
-export default function Navegacion() {
+
+export default function Navegacion({
+  cantidadProductos,
+  onMostrarProductos,
+  onMostrarCarrito,
+}) {
   return (
-    <nav className="navegacion">
+    <nav className="navegacion" aria-label="Navegación principal">
       <ul>
         <li>
-          <a href="/">Inicio</a>
+          <button type="button" onClick={onMostrarProductos}>
+            Productos
+          </button>
         </li>
         <li>
-          <a href="/productos">Productos</a>
-        </li>
-        <li>
-          <a href="/contacto">Contacto</a>
+          <button type="button" onClick={onMostrarCarrito}>
+            Carrito
+            <span className="navegacion_contador" aria-label={`${cantidadProductos} productos`}>
+              {cantidadProductos}
+            </span>
+          </button>
         </li>
       </ul>
-      <LogoCarrito cantidadproductos={0} />
     </nav>
   );
 }
